@@ -1,0 +1,456 @@
+{
+  "author": "Unnamed",
+  "title": "Untitled Diagram",
+  "date": "2024-11-20T13:34:48.418Z",
+  "tables": [
+    {
+      "name": "Users",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": true,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "password",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "phone",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 20,
+          "check": "",
+          "id": 3
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 4
+        },
+        {
+          "name": "language",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "uk",
+          "size": 10,
+          "check": "",
+          "id": 5
+        },
+        {
+          "name": "theme",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "light",
+          "size": 20,
+          "check": "",
+          "id": 6
+        },
+        {
+          "name": "deviceId",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 7
+        }
+      ],
+      "indices": [],
+      "id": 0,
+      "x": -206.64,
+      "y": 417.8975
+    },
+    {
+      "name": "Addresses",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "address_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": true,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "address",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 20,
+          "check": "",
+          "id": 2
+        },
+        {
+          "name": "tariff_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": false,
+          "default": "",
+          "check": "",
+          "id": 3
+        },
+        {
+          "name": "balance",
+          "type": "DECIMAL",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": "10,2",
+          "check": "",
+          "id": 4
+        }
+      ],
+      "indices": [],
+      "id": 1,
+      "x": 117.15499999999997,
+      "y": 605.8199999999999
+    },
+    {
+      "name": "Tariffs",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "tariff_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": true,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "tariff_name",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 2,
+      "x": 781.1175000000004,
+      "y": 586.2624999999999
+    },
+    {
+      "name": "Services",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "service_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": true,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "service_name",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 255,
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 3,
+      "x": 459.99999999999983,
+      "y": 704.5374999999999
+    },
+    {
+      "name": "TariffServices",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "tariff_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "service_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 4,
+      "x": 775.3575000000002,
+      "y": 402.6975
+    },
+    {
+      "name": "UserAddresses",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "address_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 1
+        }
+      ],
+      "indices": [],
+      "id": 5,
+      "x": 140,
+      "y": 420
+    },
+    {
+      "name": "AddressServices",
+      "comment": "",
+      "color": "#175e7a",
+      "fields": [
+        {
+          "name": "address_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 0
+        },
+        {
+          "name": "service_id",
+          "type": "INTEGER",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": false,
+          "primary": true,
+          "default": "",
+          "check": "",
+          "id": 1
+        },
+        {
+          "name": "ip",
+          "type": "VARCHAR",
+          "comment": "",
+          "unique": false,
+          "increment": false,
+          "notNull": true,
+          "primary": false,
+          "default": "",
+          "size": 15,
+          "check": "",
+          "id": 2
+        }
+      ],
+      "indices": [],
+      "id": 6,
+      "x": 466,
+      "y": 413
+    }
+  ],
+  "relationships": [
+    {
+      "name": "TariffServices_tariff_id_fk",
+      "startTableId": 4,
+      "endTableId": 2,
+      "endFieldId": 0,
+      "startFieldId": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 0
+    },
+    {
+      "name": "TariffServices_service_id_fk",
+      "startTableId": 4,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 1
+    },
+    {
+      "name": "UserAddresses_user_id_fk",
+      "startTableId": 5,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "startFieldId": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 2
+    },
+    {
+      "name": "UserAddresses_address_id_fk",
+      "startTableId": 5,
+      "endTableId": 1,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 3
+    },
+    {
+      "name": "AddressServices_address_id_fk",
+      "startTableId": 6,
+      "endTableId": 1,
+      "endFieldId": 0,
+      "startFieldId": 0,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 4
+    },
+    {
+      "name": "AddressServices_service_id_fk",
+      "startTableId": 6,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "startFieldId": 1,
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one",
+      "id": 5
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "mysql"
+}

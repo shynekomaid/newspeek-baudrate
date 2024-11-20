@@ -18,7 +18,7 @@
 
 Install [this](https://marketplace.visualstudio.com/items?itemName=satiromarra.code-sftp) extension and remove all another forks
 
-> ⚠️ If you still want to use old extention by `liximomo` or `natizyskunk`, you can't use .env files, use [assume-unchanged](../README.md#preventing-leaking-passwords) mechanism for `.sftp` file
+> ⚠️ If you still want to use old extention by `liximomo` or `natizyskunk`, you can't use .env files, use mechanism for `.sftp` file
 >
 > 📝 If you use any microsoft synchronization extension, look for documentation yourself on how to make it work and not save passwords in the repository
 

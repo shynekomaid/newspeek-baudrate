@@ -15,6 +15,7 @@ This repo hold stuff and code for test project (Symfony 6.4)
       - [Web Server](#web-server)
         - [Prepare web files](#prepare-web-files)
         - [Config Nginx and PHP-FPM](#config-nginx-and-php-fpm)
+      - [Temp commands (will be deleted or structured later)](#temp-commands-will-be-deleted-or-structured-later)
     - [VSCode Extensions](#vscode-extensions)
     - [Secure Backup of .env Files](#secure-backup-of-env-files)
     - [Config SFTP Extention](#config-sftp-extention)
@@ -184,6 +185,10 @@ Nginx config:
 >
 > Don't forget use `sudo su` before run install commands from NGINXconfig
 
+#### Temp commands (will be deleted or structured later)
+
+composer create-project symfony/skeleton newspeek-baudrate "6.4.\*"
+
 Link with my NGINX config - [here](https://www.digitalocean.com/community/tools/nginx?domains.0.server.domain=shynekomaid.space&domains.0.server.path=%2Fvar%2Fwww%2Fnewspeek-baudrate&domains.0.php.phpServer=%2Fvar%2Frun%2Fphp%2Fphp8.1-fpm.sock&global.nginx.clientMaxBodySize=1024&global.nginx.typesHashMaxSize=4096&global.nginx.typesHashBucketSize=2048)
 
 If error while installing nginx config maybe you need increase server_names_hash_bucket_size - add it to nginx.conf like: `server_names_hash_bucket_size 2048`;
@@ -194,7 +199,7 @@ If error while installing nginx config maybe you need increase server_names_hash
 > If you use vscode you will be see recommended extensions (by .vscode/extensions.json)
 > Alternatively, you can install extensions manually by links below
 
-- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - for markdown and auto TOC (I use it for this README.md)
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - for markdown and auto TOC
 - [Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode) - for gitmoji commits made easy
 - [SFTP](https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp) - for easy deploy to server
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) - advanced PHP language support (see [docs](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client#quick-start) Quick Start)

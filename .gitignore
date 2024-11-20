@@ -1,0 +1,19 @@
+# Ignore .idea shit
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/prod.bitrek.video.iml
+.idea/vcs.xml
+.env
+
+# Ignore .vscode folder except for some project related
+.vscode/*
+!.vscode/sftp.json
+!.vscode/*.md
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/*.code-snippets
+!.vscode/i18n-ally-custom-framework.yml
+
+# Ignore enviroment file
+**/.env

@@ -1,0 +1,51 @@
+{
+  // Hide bootstrap shit from search
+  "search.exclude": {
+    ".deprecated": true,
+    "**/bootstrap*": true,
+    "**/simpledatatables.css": true
+  },
+  // Config for intelephense for actual php
+  "intelephense.environment.phpVersion": "8.1",
+  // Extension for easy translate and displaying of i18n strings
+  // (In-editor analog of crowdin or poedit)
+  // "i18n-ally.localesPaths": [
+  //   "www/lang"
+  // ],
+  // "i18n-ally.keystyle": "flat",
+  // "i18n-ally.sourceLanguage": "en",
+  // "i18n-ally.displayLanguage": "en",
+  // "i18n-ally.enabledParsers": [
+  //   "json"
+  // ],
+  // "i18n-ally.extract.autoDetect": true,
+  // "i18n-ally.sortKeys": true,
+  // "i18n-ally.sortCompare": "binary",
+  // "i18n-ally.enabledFrameworks": [
+  //   "custom",
+  //   "i18next"
+  // ],
+  // "i18n-ally.extract.keyMaxLength": 100,
+  // "i18n-ally.usage.scanningIgnore": [
+  //   "web/ext_modules",
+  //   "web/base",
+  //   "web/modules/ssp.class.php"
+  // ],
+  // Pretty markdown
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 80,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [
+      80
+    ]
+  },
+  // Used for correct displaying of kebindings in markdown
+  "markdownlint.config": {
+    "MD033": {
+      "allowed_elements": [
+        "kbd"
+      ]
+    }
+  },
+}

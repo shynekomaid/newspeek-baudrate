@@ -1,0 +1,13 @@
+# .vscode/i18n-ally-custom-framework.yml
+# Used to display translated strings instead of keys in editor
+languageIds:
+  - javascript
+  - html
+  - php
+
+usageMatchRegex:
+  - "[^\\w\\d]LANG\\.([a-z_A-Z0-9]+)" # LANG.key
+  - "[^\\w\\d]LANG\\?\\.([a-z_A-Z0-9]+)" # LANG?.key
+  - tr="([^"]+)" # tr arrtibute
+  - title_tr="([^"]+)" # title_tr attribute
+  - data-i18n="([^"]+)" # data-i18n attribute

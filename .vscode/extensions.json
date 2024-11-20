@@ -1,0 +1,20 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+	"recommendations": [
+		"yzhang.markdown-all-in-one", // Good markdown tools
+		"seatonjiang.gitmoji-vscode", // Gitmoji is ❤️
+		"satiromarra.code-sftp", // This extension is great for remote development
+		"bmewburn.vscode-intelephense-client", // PHP tool. Paid version optional
+		"gruntfuggly.todo-tree", // Lite analog of emacs Org-mode
+		"tombonnike.vscode-status-bar-format-toggle", // Prevent format minified JS
+		"editorconfig.editorconfig", // Musthave shit
+		// "lokalise.i18n-ally" // Translation tool
+		// "yzane.markdown-pdf" // pdf preview
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+		"Natizyskunk.sftp", // Obsolete
+		"liximomo.sftp" // Broken and obsolete
+	]
+}

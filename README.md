@@ -11,11 +11,11 @@ This repo hold stuff and code for test project (Symfony 6.4)
     - [Prerequisites](#prerequisites)
     - [Dependencies](#dependencies)
       - [Nginx](#nginx)
-      - [PHP](#php)
+      - [MariaDB](#mariadb)
       - [Web Server](#web-server)
         - [Prepare web files](#prepare-web-files)
         - [Config Nginx and PHP-FPM](#config-nginx-and-php-fpm)
-      - [Temp commands (will be deleted or structured later)](#temp-commands-will-be-deleted-or-structured-later)
+      - [PHP](#php)
     - [VSCode Extensions](#vscode-extensions)
     - [Secure Backup of .env Files](#secure-backup-of-env-files)
     - [Config SFTP Extention](#config-sftp-extention)
@@ -31,7 +31,7 @@ This repo hold stuff and code for test project (Symfony 6.4)
    - A: LEMP: Linux, Nginx, MySQL(MariaDB), PHP8.1
 
 3. - Q: Technical assignment link.
-   - A: [Here](docs/development/task_symphony.md)
+   - A: [Here](docs/development/task_symfony.md)
 
 4. - Q: Project a based on a template?
    - A: Particularly, the git repository itself is essentially a template, with everything from the `docs` folder, the `README.md`, and its recipes, `.editorconfig`, `.vscode` settings, and other QoL improvements all stemming from the my template. _However_, the Symfony project itself was built from scratch, not based on any template
@@ -87,45 +87,27 @@ sudo apt install nginx
 sudo apt install certbot # for let's encrypt
 ```
 
-#### PHP
+#### MariaDB
 
-Add the PHP repository (for PHP 8.1):
-
-> Try install without adding repository
-> Maybe PHP 8.1 is already in your distributive default sources
-
-```bash
-sudo add-apt-repository ppa:ondrej/php
-sudo apt update
-```
-
-Install PHP 8.1:
-
-> This setup will install the latest versions of musthave PHP extensions
+> Replace `db_user` and `db_password` with your own
 
 ```bash
 sudo apt update
-sudo apt install php8.1 php8.1-cli php8.1-common php8.1-ctype php8.1-iconv php8.1-pcre php8.1-session php8.1-simplexml php8.1-tokenizer
+sudo apt install mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
 ```
 
-Install Composer:
-
 ```bash
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer # To use composer command instead of php composer.phar
+sudo mysql_secure_installation
+mysql -u root -p
 ```
 
-Install Symfony CLI:
-
-```bash
-curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
-sudo apt install symfony-cli
-```
-
-Check Symfony installation:
-
-```bash
-symfony check:requirements
+```SQL
+CREATE DATABASE newspeek_baudrate;
+CREATE USER 'db_user'@'localhost' IDENTIFIED BY 'db_password';
+GRANT ALL PRIVILEGES ON newspeek_baudrate.* TO 'db_user'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
 #### Web Server
@@ -185,13 +167,81 @@ Nginx config:
 >
 > Don't forget use `sudo su` before run install commands from NGINXconfig
 
-#### Temp commands (will be deleted or structured later)
-
-composer create-project symfony/skeleton newspeek-baudrate "6.4.\*"
-
 Link with my NGINX config - [here](https://www.digitalocean.com/community/tools/nginx?domains.0.server.domain=shynekomaid.space&domains.0.server.path=%2Fvar%2Fwww%2Fnewspeek-baudrate&domains.0.php.phpServer=%2Fvar%2Frun%2Fphp%2Fphp8.1-fpm.sock&global.nginx.clientMaxBodySize=1024&global.nginx.typesHashMaxSize=4096&global.nginx.typesHashBucketSize=2048)
 
 If error while installing nginx config maybe you need increase server_names_hash_bucket_size - add it to nginx.conf like: `server_names_hash_bucket_size 2048`;
+
+#### PHP
+
+Add the PHP repository (for PHP 8.1):
+
+> Try install without adding repository
+> Maybe PHP 8.1 is already in your distributive default sources
+
+```bash
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+```
+
+Install PHP 8.1:
+
+> This setup will install the latest versions of musthave PHP extensions
+
+```bash
+sudo apt update
+sudo apt install php8.1 php8.1-cli php8.1-common php8.1-ctype php8.1-iconv php8.1-pcre php8.1-session php8.1-simplexml php8.1-tokenizer
+```
+
+Install Composer:
+
+```bash
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer # To use composer command instead of php composer.phar
+```
+
+Install Symfony CLI:
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
+sudo apt install symfony-cli
+```
+
+Check Symfony installation:
+
+```bash
+symfony check:requirements
+```
+
+Create project:
+
+```bash
+composer create-project symfony/skeleton newspeek-baudrate "6.4.\*"
+```
+
+Install Symfony requirements:
+
+```bash
+composer require symfony/orm-pack
+composer require doctrine/doctrine-migrations-bundle
+```
+
+Check Database working:
+
+> Add `"DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/newspeek_baudrate"` to symfony .env file
+
+```bash
+php bin/console doctrine:query:sql "SELECT 1"
+```
+
+Check Symfony working:
+
+Open `shynekomaid.space` or `127.0.0.1` in browser
+
+If Any error - rewamp chown
+
+```bash
+sudo setfacl -R -d -m u:shyneko:rwx /var/www/newspeek-baudrate
+```
 
 ### VSCode Extensions
 

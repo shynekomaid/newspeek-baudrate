@@ -186,6 +186,23 @@ class AddressController extends AbstractController
         ]);
     }
 
+    /**
+     * Updates an address by its ID.
+     *
+     * @param Request $request The request object containing the updated address data in JSON format.
+     * @param int $id The ID of the address to update.
+     *
+     * @return JsonResponse A JSON response containing the updated address information, or an error message if the address is not found or if any required data is missing.
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
+     *
+     * Body parameters:
+     * - address: string, required
+     * - status: string, required
+     * - tariff: string, required
+     * - balance: float, required
+     */
     #[Route('/address/{id}', name: 'app_address_update', methods: ['PUT'])]
     public function update(Request $request, $id): JsonResponse
     {

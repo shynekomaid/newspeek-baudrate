@@ -58,6 +58,9 @@ This repo hold stuff and code for test project (Symfony 6.4)
     - If addresses and devices represent a many-to-many relationship (where many devices can be associated with one address, but the same devices can be associated with multiple addresses), I would create a DevicesAddresses join table with device_id and address_id fields to manage the associations.
     - Also, I find it strange to represent services as an object. I would prefer to implement it as an array of objects for better structure and flexibility, as the service can have new fields
 
+11. - Q: Why no bandles?
+    - A: [No recommended by Symfony](https://symfony.com/doc/6.4/bundles.html)
+
 ## Deployment
 
 Follow these steps to deploy your project:

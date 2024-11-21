@@ -44,10 +44,19 @@ This repo hold stuff and code for test project (Symfony 6.4)
    - A: The first reason is that the test server is cheap and has too few resources to "pull" a Docker in there as well. Second reason: For this test case I think that using Docker is overkill
 
 7. - Q: Where is the test server?
-     [shynekomaid.space](https://shynekomaid.space)
+   - A: [shynekomaid.space](https://shynekomaid.space)
 
 8. - Q: Where is database structure?
-     [docs/development/database.md](docs/development/database.md)
+   - A: [docs/development/database.md](docs/development/database.md)
+
+9. - Q: Answer to test assignment additional task?
+   - A: I believe this refers to deviceId, and it seems to me that this field has more to do with addresses than users. Depending on how the system is set up, I would do the following:
+
+   If addresses and devices are a one-to-many relationship (where multiple devices can be associated with a single address), I would add the address_id field to the device entity (or table) to establish a relationship with the address.
+
+   If addresses and devices represent a many-to-many relationship (where many devices can be associated with one address, but the same devices can be associated with multiple addresses), I would create a DevicesAddresses join table with device_id and address_id fields to manage the associations.
+
+   Also, I find it strange to represent services as an object. I would prefer to implement it as an array of objects for better structure and flexibility, as the service can have new fields
 
 ## Deployment
 

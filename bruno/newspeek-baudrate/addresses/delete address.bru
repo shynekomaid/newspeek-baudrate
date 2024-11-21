@@ -1,0 +1,21 @@
+meta {
+  name: delete address
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{domain}}/address/3
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 3,
+    "address": "34 кв. Академіка Ломоносова, 36",
+    "status": "active",
+    "tariff": "Unlim 1000",
+    "balance": 230
+  }
+}

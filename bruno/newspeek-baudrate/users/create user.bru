@@ -1,0 +1,23 @@
+meta {
+  name: create user
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{domain}}/user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "domo00000",
+    "password": "1",
+    "phone": "000000000",
+    "email": "test@test.ua",
+    "language": "uk",
+    "theme": "light",
+    "deviceId": ""
+  }
+}

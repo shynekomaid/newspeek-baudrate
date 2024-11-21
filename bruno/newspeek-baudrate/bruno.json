@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "newspeek-baudrate",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

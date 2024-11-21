@@ -49,14 +49,14 @@ This repo hold stuff and code for test project (Symfony 6.4)
 8. - Q: Where is database structure?
    - A: [docs/development/database.md](docs/development/database.md)
 
-9. - Q: Answer to test assignment additional task?
-   - A: I believe this refers to deviceId, and it seems to me that this field has more to do with addresses than users. Depending on how the system is set up, I would do the following:
+9. - Q: How to work with API?
+   - A: I [use Bruno](https://www.usebruno.com) to work with API. Bruno collection can be found in bruno folder in this repository
 
-   If addresses and devices are a one-to-many relationship (where multiple devices can be associated with a single address), I would add the address_id field to the device entity (or table) to establish a relationship with the address.
-
-   If addresses and devices represent a many-to-many relationship (where many devices can be associated with one address, but the same devices can be associated with multiple addresses), I would create a DevicesAddresses join table with device_id and address_id fields to manage the associations.
-
-   Also, I find it strange to represent services as an object. I would prefer to implement it as an array of objects for better structure and flexibility, as the service can have new fields
+10. - Q: Answer to test assignment additional task?
+    - A: I believe this refers to deviceId, and it seems to me that this field has more to do with addresses than users. Depending on how the system is set up, I would do the following:
+    - If addresses and devices are a one-to-many relationship (where multiple devices can be associated with a single address), I would add the address_id field to the device entity (or table) to establish a relationship with the address.
+    - If addresses and devices represent a many-to-many relationship (where many devices can be associated with one address, but the same devices can be associated with multiple addresses), I would create a DevicesAddresses join table with device_id and address_id fields to manage the associations.
+    - Also, I find it strange to represent services as an object. I would prefer to implement it as an array of objects for better structure and flexibility, as the service can have new fields
 
 ## Deployment
 
@@ -154,6 +154,14 @@ ls -ld /var/www/newspeek-baudrate
 
 ##### Config Nginx and PHP-FPM
 
+> If in plan to work with symfony without nginx - this command will start local server:
+>
+> ```bash
+> symfony server:start
+> ```
+>
+> And you can skip Nginx and PHP-FPM configuration
+
 Configuring PHP-FPM:
 
 ```ini
@@ -224,6 +232,12 @@ Check Symfony installation:
 symfony check:requirements
 ```
 
+If in plan to work with symfony without nginx - this command will start local server:
+
+```bash
+symfony server:start
+```
+
 Create project:
 
 ```bash
@@ -292,6 +306,12 @@ php bin/console doctrine:migrations:diff
 
 ```bash
 php bin/console doctrine:migrations:rollback
+```
+
+Create controller:
+
+```bash
+php bin/console make:controller UserController
 ```
 
 ### VSCode Extensions

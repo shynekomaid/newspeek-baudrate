@@ -1,0 +1,21 @@
+meta {
+  name: get address
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{domain}}/address/1
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "user_id": 3,
+    "address": "34 кв. Академіка Ломоносова, 36",
+    "status": "active",
+    "tariff": "Unlim 1000",
+    "balance": 230
+  }
+}

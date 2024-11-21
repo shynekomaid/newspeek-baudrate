@@ -1,0 +1,22 @@
+meta {
+  name: update user
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{domain}}/user/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "password": "1",
+    "phone": "000000000",
+    "email": "test@test.ua",
+    "language": "uk",
+    "theme": "light",
+    "deviceId": ""
+  }
+}

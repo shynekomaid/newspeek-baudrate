@@ -16,6 +16,7 @@ This repo hold stuff and code for test project (Symfony 6.4)
         - [Prepare web files](#prepare-web-files)
         - [Config Nginx and PHP-FPM](#config-nginx-and-php-fpm)
       - [PHP](#php)
+      - [Symfony](#symfony)
     - [VSCode Extensions](#vscode-extensions)
     - [Secure Backup of .env Files](#secure-backup-of-env-files)
     - [Config SFTP Extention](#config-sftp-extention)
@@ -199,6 +200,8 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer # To use composer command instead of php composer.phar
 ```
 
+#### Symfony
+
 Install Symfony CLI:
 
 ```bash
@@ -223,6 +226,7 @@ Install Symfony requirements:
 ```bash
 composer require symfony/orm-pack
 composer require doctrine/doctrine-migrations-bundle
+composer require symfony/maker-bundle --dev
 ```
 
 Check Database working:
@@ -240,7 +244,45 @@ Open `shynekomaid.space` or `127.0.0.1` in browser
 If Any error - rewamp chown
 
 ```bash
-sudo setfacl -R -d -m u:shyneko:rwx /var/www/newspeek-baudrate
+sudo chown -R www-data:www-data /var/www/newspeek-baudrate
+```
+
+Create entities using `symfony make:entity`:
+
+> Replace `User` with your entity
+
+```bash
+php bin/console make:entity User
+```
+
+And create according to [docs/development/database.md](docs/development/database.md)
+
+After adding entity you can fullfill it manualy, or via wizard
+
+Migration notes:
+
+> After entity created you can make migrations:
+
+```bash
+php bin/console make:migration
+```
+
+> Apply migrations:
+
+```bash
+php bin/console doctrine:migrations:migrate
+```
+
+> Check SQL dump that performed migrations:
+
+```bash
+php bin/console doctrine:migrations:diff
+```
+
+> Rollback migrations:
+
+```bash
+php bin/console doctrine:migrations:rollback
 ```
 
 ### VSCode Extensions
